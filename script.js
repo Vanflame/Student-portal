@@ -26,30 +26,39 @@
         year: '3rd Year',
         email: 'john.delacruz@uni.edu',
         tuitionTotal: 40000,
-        tuitionPaid: 27500 // so outstanding 12500
-    };
-
-    const ANNOUNCEMENTS = [
-        { id: 1, title: 'Semester registration opens', date: Date.now() - 86400000 * 2, body: 'Register Oct 15–20', unread: true },
-        { id: 2, title: 'Library hours extended', date: Date.now() - 1000 * 60 * 60 * 8, body: 'Open until 10PM during exam week', unread: true },
-        { id: 3, title: 'Hackathon this weekend', date: Date.now() - 1000 * 60 * 60 * 40, body: 'Bring your laptop and idea', unread: true }
-    ];
-
-    const GRADE_LABELS = ['CS101', 'MATH201', 'CS102', 'WEB303', 'ENG101'];
-    const GRADE_VALUES = [88, 76, 92, 81, 85];
-
-    const CATALOG = [
-        { code: 'CS101', name: 'Intro to Programming', credits: 3, schedule: 'Mon 08:00' },
-        { code: 'CS102', name: 'Data Structures', credits: 4, schedule: 'Tue 09:00' },
-        { code: 'WEB303', name: 'Web Development', credits: 3, schedule: 'Thu 15:00' },
-        { code: 'MATH201', name: 'Discrete Math', credits: 3, schedule: 'Wed 10:00' },
-        { code: 'ENG101', name: 'Academic Writing', credits: 2, schedule: 'Fri 11:00' }
+        tuitionPaid: 27500 // s    const ANNOUNCEMENTS = [
+        { id: 1, title: 'Semester Registration Opens', date: Date.now() - 86400000 * 2, body: 'Registration for Spring 2024 semester opens October 15-20. Please complete your course selection by the deadline.', unread: true, priority: 'high' },
+        { id: 2, title: 'Library Hours Extended', date: Date.now() - 1000 * 60 * 60 * 8, body: 'The main library will be open until 10PM during exam week (Dec 10-16). Study rooms are available for group work.', unread: true, priority: 'medium' },
+        { id: 3, title: 'Tech Hackathon This Weekend', date: Date.now() - 1000 * 60 * 60 * 40, body: 'Join us for the annual university hackathon! Prizes include internships and cash awards. Register at tech.uni.edu/hackathon', unread: true, priority: 'high' },
+        { id: 4, title: 'Financial Aid Workshop', date: Date.now() - 1000 * 60 * 60 * 24 * 3, body: 'Learn about scholarship opportunities and financial planning. Workshop scheduled for Dec 5th at 2PM in Room 201.', unread: false, priority: 'medium' },
+        { id: 5, title: 'Campus WiFi Upgrade Complete', date: Date.now() - 1000 * 60 * 60 * 24 * 7, body: 'New high-speed WiFi is now available across campus. Connect to "Uni-Secure" for the best experience.', unread: false, priority: 'low' },
+        { id: 6, title: 'Career Fair Registration', date: Date.now() - 1000 * 60 * 60 * 24 * 10, body: 'Spring Career Fair registration is now open. Over 50 companies will be attending. Register by Dec 20th.', unread: false, priority: 'high' }
+    ];p and id    const GRADE_LABELS = ['CS101', 'MATH201', 'CS102', 'WEB303', 'ENG101', 'PHYS201', 'STAT301', 'CS201'];
+    const GRADE_VALUES = [88, 76, 92, 81, 85, 79, 87, 91];
+    
+    const DETAILED_GRADES = [
+        { course: 'CS101 - Intro to Programming', grade: 88, credits: 3, semester: 'Fall 2023', instructor: 'Dr. Smith' },
+        { course: 'MATH201 - Discrete Mathematics', grade: 76, credits: 4, semester: 'Fall 2023', instructor: 'Prof. Johnson' },
+        { course: 'CS102 - Data Structures', grade: 92, credits: 4, semester: 'Fall 2023', instructor: 'Dr. Williams' },
+        { course: 'WEB303 - Web Development', grade: 81, credits: 3, semester: 'Fall 2023', instructor: 'Prof. Brown' },
+        { course: 'ENG101 - Academic Writing', grade: 85, credits: 2, semester: 'Fall 2023', instructor: 'Dr. Davis' },
+        { course: 'PHYS201 - Physics I', grade: 79, credits: 4, semester: 'Fall 2023', instructor: 'Prof. Wilson' },
+        { course: 'STAT301 - Statistics', grade: 87, credits: 3, semester: 'Fall 2023', instructor: 'Dr. Miller' },
+        { course: 'CS201 - Algorithms', grade: 91, credits: 4, semester: 'Fall 2023', instructor: 'Prof. Garcia' }
+    ];E_VALU    const CATALOG = [
+        { code: 'CS101', name: 'Introduction to Programming', credits: 3, schedule: 'Mon 08:00', instructor: 'Dr. Smith', room: 'Room 301', capacity: 30, enrolled: 28 },
+        { code: 'CS102', name: 'Data Structures and Algorithms', credits: 4, schedule: 'Tue 09:00', instructor: 'Prof. Johnson', room: 'Room 205', capacity: 25, enrolled: 24 },
+        { code: 'WEB303', name: 'Web Development Fundamentals', credits: 3, schedule: 'Thu 15:00', instructor: 'Dr. Williams', room: 'Lab 1', capacity: 20, enrolled: 18 },
+        { code: 'MATH201', name: 'Discrete Mathematics', credits: 3, schedule: 'Wed 10:00', instructor: 'Prof. Brown', room: 'Room 102', capacity: 35, enrolled: 32 },
+        { code: 'ENG101', name: 'Academic Writing and Communication', credits: 2, schedule: 'Fri 11:00', instructor: 'Dr. Davis', room: 'Room 99', capacity: 25, enrolled: 22 },
+        { code: 'CS301', name: 'Database Systems', credits: 3, schedule: 'Mon 14:00', instructor: 'Prof. Wilson', room: 'Lab 2', capacity: 20, enrolled: 19 },
+        { code: 'MATH301', name: 'Calculus III', credits: 4, schedule: 'Tue 11:00', instructor: 'Dr. Miller', room: 'Room 201', capacity: 30, enrolled: 27 },
+        { code: 'CS401', name: 'Software Engineering', credits: 4, schedule: 'Wed 15:00', instructor: 'Prof. Garcia', room: 'Room 301', capacity: 25, enrolled: 23 }
+    ];: 2, schedule: 'Fri 11:00' }
     ];
 
     // default widgets selection
-    const DEFAULT_WIDGETS = ['gpa', 'tuition', 'nextClass', 'announcements', 'weather', 'quote'];
-
-    // available widgets (id and label)
+    const DEFAULT_WIDGETS = ['gpa', 'tuition', 'nextClass', 'announcements', 'weather', 'quote', 'progress', 'upcoming'];
     const WIDGETS = [
         { id: 'gpa', label: 'GPA Overview' },
         { id: 'tuition', label: 'Tuition Balance' },
@@ -60,7 +69,12 @@
         { id: 'weather', label: 'Weather (mock)' },
         { id: 'quote', label: 'Motivational Quote' },
         { id: 'clock', label: 'Clock & Date' },
-        { id: 'pomodoro', label: 'Pomodoro (mini)' }
+        { id: 'pomodoro', label: 'Pomodoro (mini)' },
+        { id: 'progress', label: 'Academic Progress' },
+        { id: 'upcoming', label: 'Upcoming Events' },
+        { id: 'library', label: 'Library Status' },
+        { id: 'campus', label: 'Campus News' }
+    ];'pomodoro', label: 'Pomodoro (mini)' }
     ];
 
     // ------- Elements -------
@@ -148,15 +162,24 @@
     (savedTheme === 'dark') ? document.documentElement.setAttribute('data-theme', 'dark') : document.documentElement.removeAttribute('data-theme');
     $('#themeToggle') && $('#themeToggle').addEventListener('click', () => {
         const t = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); else document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem(LS.theme, t);
-    });
-
-    // ------- Announcements (badge) -------
-    function renderAnnouncementsList() {
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); else document.documentElement.removeAt    function renderAnnouncementsList() {
         const out = $('#annList');
         if (!out) return;
-        out.innerHTML = ANNOUNCEMENTS.map(a => `<li><strong>${escapeHtml(a.title)}</strong><div class="muted small">${timeAgo(a.date)}${a.unread ? ' • <strong style="color:var(--primary)">New</strong>' : ''}</div><div class="muted small" style="margin-top:6px">${escapeHtml(a.body)}</div></li>`).join('');
+        out.innerHTML = ANNOUNCEMENTS.map(a => {
+            const priorityColor = a.priority === 'high' ? '#ef4444' : a.priority === 'medium' ? '#f59e0b' : '#6b7280';
+            const priorityIcon = a.priority === 'high' ? '🔴' : a.priority === 'medium' ? '🟡' : '🔵';
+            return `<li style="padding:16px;border-radius:12px;background:var(--gradient-card);border:1px solid var(--border);margin-bottom:12px;box-shadow:0 2px 8px var(--shadow)">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                    <span style="font-size:12px">${priorityIcon}</span>
+                    <strong style="color:var(--text)">${escapeHtml(a.title)}</strong>
+                    ${a.unread ? '<span style="background:var(--gradient-primary);color:white;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:600">NEW</span>' : ''}
+                </div>
+                <div class="muted small" style="margin-bottom:8px">${timeAgo(a.date)} • Priority: <span style="color:${priorityColor};font-weight:600">${a.priority.toUpperCase()}</span></div>
+                <div class="muted small" style="line-height:1.5">${escapeHtml(a.body)}</div>
+            </li>`;
+        }).join('');
+        updateAnnBadge();
+    }div><div class="muted small" style="margin-top:6px">${escapeHtml(a.body)}</div></li>`).join('');
         updateAnnBadge();
     }
     function updateAnnBadge() {
@@ -219,13 +242,39 @@
                 break;
 
             case 'clock':
-                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Clock & Date</h3>
-          <div id="widgetClock" style="font-weight:700;margin-top:8px">${new Date().toLocaleString()}</div>`;
-                break;
-
-            case 'pomodoro':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><circle cx="12" cy="12"            case 'pomodoro':
                 el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M12 2v4"/></svg> Pomodoro</h3>
           <div id="miniPomTimer" style="font-weight:700;font-size:20px">25:00</div><div style="margin-top:8px"><button id="miniPomStart" class="btn-primary">Start</button> <button id="miniPomStop" class="btn-ghost">Stop</button></div>`;
+                break;
+
+            case 'progress':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Academic Progress</h3>
+          <div style="margin:12px 0"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>Credits Completed</span><span><strong>89/120</strong></span></div>
+          <div style="background:#e2e8f0;height:8px;border-radius:4px;overflow:hidden"><div style="background:var(--gradient-primary);height:100%;width:74%;transition:width 0.5s"></div></div></div>
+          <div class="muted small">74% Complete • 31 credits remaining</div>`;
+                break;
+
+            case 'upcoming':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg> Upcoming Events</h3>
+          <ul style="list-style:none;padding:0;margin:8px 0"><li style="padding:6px 0;border-bottom:1px solid var(--border)"><strong>Dec 15</strong><br><span class="muted small">Final Exams Begin</span></li>
+          <li style="padding:6px 0;border-bottom:1px solid var(--border)"><strong>Dec 20</strong><br><span class="muted small">Career Fair</span></li>
+          <li style="padding:6px 0"><strong>Dec 22</strong><br><span class="muted small">Winter Break Starts</span></li></ul>`;
+                break;
+
+            case 'library':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg> Library Status</h3>
+          <div style="margin:12px 0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="width:8px;height:8px;background:#10b981;border-radius:50%"></div><span><strong>Open</strong> • Closes at 10PM</span></div>
+          <div class="muted small">Current capacity: 45/100<br>Study rooms available: 3</div></div>`;
+                break;
+
+            case 'campus':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></svg> Campus News</h3>
+          <div style="margin:8px 0"><div style="padding:8px;background:rgba(59,130,246,0.05);border-radius:8px;margin-bottom:8px"><strong>New Research Lab Opens</strong><br><span class="muted small">State-of-the-art facilities now available</span></div>
+          <div style="padding:8px;background:rgba(16,185,129,0.05);border-radius:8px"><strong>Student Achievement</strong><br><span class="muted small">CS students win national competition</span></div></div>`;
+                break;
+
+            default:
+                el.innerHTML = `<h3>${escapeHtml(id)}</h3>`;tn-primary">Start</button> <button id="miniPomStop" class="btn-ghost">Stop</button></div>`;
                 break;
 
             default:
@@ -298,12 +347,39 @@
           <div style="font-style:italic;margin-top:8px">"${escapeHtml(q)}"</div>`;
                 break;
             case 'clock':
-                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Clock & Date</h3>
-          <div id="widgetClock" style="font-weight:700;margin-top:8px">${new Date().toLocaleString()}</div>`;
-                break;
-            case 'pomodoro':
+                el.innerHTML = `<h3            case 'pomodoro':
                 el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M12 2v4"/></svg> Pomodoro</h3>
           <div id="miniPomTimer" style="font-weight:700;font-size:20px">25:00</div><div style="margin-top:8px"><button id="miniPomStart" class="btn-primary">Start</button> <button id="miniPomStop" class="btn-ghost">Stop</button></div>`;
+                break;
+
+            case 'progress':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Academic Progress</h3>
+          <div style="margin:12px 0"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>Credits Completed</span><span><strong>89/120</strong></span></div>
+          <div style="background:#e2e8f0;height:8px;border-radius:4px;overflow:hidden"><div style="background:var(--gradient-primary);height:100%;width:74%;transition:width 0.5s"></div></div></div>
+          <div class="muted small">74% Complete • 31 credits remaining</div>`;
+                break;
+
+            case 'upcoming':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg> Upcoming Events</h3>
+          <ul style="list-style:none;padding:0;margin:8px 0"><li style="padding:6px 0;border-bottom:1px solid var(--border)"><strong>Dec 15</strong><br><span class="muted small">Final Exams Begin</span></li>
+          <li style="padding:6px 0;border-bottom:1px solid var(--border)"><strong>Dec 20</strong><br><span class="muted small">Career Fair</span></li>
+          <li style="padding:6px 0"><strong>Dec 22</strong><br><span class="muted small">Winter Break Starts</span></li></ul>`;
+                break;
+
+            case 'library':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg> Library Status</h3>
+          <div style="margin:12px 0"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="width:8px;height:8px;background:#10b981;border-radius:50%"></div><span><strong>Open</strong> • Closes at 10PM</span></div>
+          <div class="muted small">Current capacity: 45/100<br>Study rooms available: 3</div></div>`;
+                break;
+
+            case 'campus':
+                el.innerHTML = `<h3><svg class="icon" viewBox="0 0 24 24" aria-hidden><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></svg> Campus News</h3>
+          <div style="margin:8px 0"><div style="padding:8px;background:rgba(59,130,246,0.05);border-radius:8px;margin-bottom:8px"><strong>New Research Lab Opens</strong><br><span class="muted small">State-of-the-art facilities now available</span></div>
+          <div style="padding:8px;background:rgba(16,185,129,0.05);border-radius:8px"><strong>Student Achievement</strong><br><span class="muted small">CS students win national competition</span></div></div>`;
+                break;
+
+            default:
+                el.innerHTML = `<h3>${escapeHtml(id)}</h3>`;25:00</div><div style="margin-top:8px"><button id="miniPomStart" class="btn-primary">Start</button> <button id="miniPomStop" class="btn-ghost">Stop</button></div>`;
                 break;
             default:
                 el.innerHTML = `<h3>${escapeHtml(id)}</h3>`;
@@ -345,7 +421,7 @@
             miniPomTimer.textContent = fmtTime(remaining);
             $('#miniPomStart') && $('#miniPomStart').addEventListener('click', () => {
                 if (interval) return;
-                interval = setInterval(() => { remaining--; miniPomTimer.textContent = fmtTime(remaining); if (remaining <= 0) { clearInterval(interval); interval = null; remaining = 25 * 60; alert('Pomodoro finished (mock)'); miniPomTimer.textContent = fmtTime(remaining); } }, 1000);
+                interval = setInterval(() => { remaining--; miniPomTimer.textContent = fmtTime(remaining); if (remaining <= 0) { clearInterval(interval); interval = null; remaining = 25 * 60; showNotification('Pomodoro session completed!', 'success'); miniPomTimer.textContent = fmtTime(remaining); } }, 1000);
             });
             $('#miniPomStop') && $('#miniPomStop').addEventListener('click', () => { if (interval) clearInterval(interval); interval = null; remaining = 25 * 60; miniPomTimer.textContent = fmtTime(remaining); });
         }
@@ -393,30 +469,38 @@
     document.addEventListener('click', e => {
         if (!customizeDrawer.classList.contains('open')) return;
         const inside = customizeDrawer.contains(e.target) || openCustomizeBtns.some(b => b && b.contains(e.target));
-        if (!inside) closeCustomizeDrawer();
-    });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCustomizeDrawer(); });
-
-    // ------- Enrollment (realistic) -------
-    const catalogListEl = $('#catalogList');
-    const selectionListEl = $('#selectionList');
-    const selectedCreditsEl = $('#selectedCredits');
-    function renderCatalog() {
+     function renderCatalog() {
         catalogListEl.innerHTML = CATALOG.map(c => {
             const disabled = enrollment.enrolled.some(e => e.code === c.code) || enrollment.selected.some(s => s.code === c.code);
+            const isFull = c.enrolled >= c.capacity;
+            return `<li style="padding:16px;background:var(--gradient-card);border-radius:12px;margin-bottom:12px;border:1px solid var(--border);box-shadow:0 2px 8px var(--shadow)">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+                    <div style="flex:1">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                            <strong style="color:var(--primary)">${c.code}</strong>
+                            <span style="background:rgba(59,130,246,0.1);color:var(--primary);padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">${c.credits} credits</span>
+                            ${isFull ? '<span style="background:#ef4444;color:white;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">FULL</span>' : ''}
+                        </div>
+                        <div style="font-weight:600;margin-bottom:4px">${escapeHtml(c.name)}</div>
+                        <div class="muted small" style="margin-bottom:4px">Instructor: ${escapeHtml(c.instructor)}</div>
+                        <div class="muted small">${escapeHtml(c.schedule)} • ${escapeHtml(c.room)} • ${c.enrolled}/${c.capacity} enrolled</div>
+                    </div>
+                    <div>
+                        <button data-select="${c.code}" class="btn-primary" ${disabled || isFull ? 'disabled' : ''} style="min-width:80px">
+                            ${disabled ? 'Selected' : isFull ? 'Full' : 'Select'}
+                        </button>
+                    </div>
+                </div>
+            </li>`;
+        }).join('');
+    } c.code) || enrollment.selected.some(s => s.code === c.code);
             return `<li><div><strong>${c.code}</strong><div class="meta">${escapeHtml(c.name)} • ${c.credits} cr • ${escapeHtml(c.schedule)}</div></div><div><button data-select="${c.code}" class="btn-primary" ${disabled ? 'disabled' : ''}>Select</button></div></li>`;
         }).join('');
     }
     function renderSelection() {
         selectionListEl.innerHTML = enrollment.selected.length ? enrollment.selected.map((s, i) => `<li><div><strong>${s.code}</strong><div class="meta">${escapeHtml(s.name)} • ${s.credits} cr</div></div><div><button data-remove="${i}" class="btn-ghost">Remove</button></div></li>`).join('') : '<div class="muted">No courses selected</div>';
-        selectedCreditsEl.textContent = enrollment.selected.reduce((sum, s) => sum + (Number(s.credits) || 0), 0);
-    }
-    renderCatalog(); renderSelection();
-
-    // catalog select / remove
-    document.addEventListener('click', e => {
-        const sel = e.target.closest('[data-select]');
-        if (sel) {
+        selectedCreditsEl.textContent = enrollment.selected.reduce((sum, s) => sum + (Number(s.credits) || 0), 0);            if (enrollment.enrolled.some(ec => ec.code === code)) return showNotification('Already enrolled in this course', 'warning');
+            if (enrollment.selected.some(sc => sc.code === code)) return showNotification('Course already selected', 'warning');el) {
             const code = sel.getAttribute('data-select');
             const course = CATALOG.find(c => c.code === code);
             if (!course) return;
@@ -431,12 +515,9 @@
             const i = +rem.getAttribute('data-remove');
             enrollment.selected.splice(i, 1);
             localStorage.setItem(LS.enrollment, JSON.stringify(enrollment));
-            renderCatalog(); renderSelection();
-        }
-    });
-
-    $('#submitEnrollment') && $('#submitEnrollment').addEventListener('click', () => {
-        if (!enrollment.selected.length) return alert('No courses selected');
+            renderCatal        localStorage.setItem(LS.enrollment, JSON.stringify(enrollment));
+        renderCatalog(); renderSelection();
+        showNotification('Enrollment submitted successfully!', 'success');ected.length) return alert('No courses selected');
         enrollment.selected.forEach(s => { if (!enrollment.enrolled.some(e => e.code === s.code)) enrollment.enrolled.push(s); });
         enrollment.selected = [];
         localStorage.setItem(LS.enrollment, JSON.stringify(enrollment));
@@ -476,30 +557,69 @@
     $('#openPayForm') && $('#openPayForm').addEventListener('click', () => $('#paymentForm').style.display = 'block');
     $('#cancelPayment') && $('#cancelPayment').addEventListener('click', () => $('#paymentForm').style.display = 'none');
     $('#savePayment') && $('#savePayment').addEventListener('click', () => {
-        const amt = parseFloat($('#paymentAmount').value || '0');
-        const dateStr = $('#paymentDate').value || new Date().toISOString().slice(0, 10);
-        const desc = ($('#paymentDesc').value || 'Payment').trim();
-        if (isNaN(amt) || amt <= 0) return alert('Enter a valid amount');
+        const amt = parseFloat($('#paymentAmount').        $('#paymentAmount').value = ''; $('#paymentDate').value = ''; $('#paymentDesc').value = '';
+        $('#paymentForm').style.display = 'none'; renderLedger(); showNotification('Payment recorded successfully!', 'success');|| amt <= 0) return alert('Enter a valid amount');
         ledger.transactions.push({ date: new Date(dateStr).getTime(), desc, debit: 0, credit: amt });
         localStorage.setItem(LS.ledger, JSON.stringify(ledger));
         $('#paymentAmount').value = ''; $('#paymentDate').value = ''; $('#paymentDesc').value = '';
         $('#paymentForm').style.display = 'none'; renderLedger(); alert('Payment recorded (mock)');
     });
 
-    // ledger remove
-    $('#ledgerTable tbody').addEventListener('click', e => {
-        const but = e.target.closest('button[data-del]');
-        if (!but) return;
-        const key = +but.getAttribute('data-del');
-        if (!confirm('Remove this ledger entry?')) return;
-        ledger.transactions = ledger.transactions.filter(t => t.date !== key);
-        localStorage.setItem(LS.ledger, JSON.stringify(ledger));
-        renderLedger();
-    });
-
-    // ------- Grades chart (main) -------
+    // ledger     // ------- Grades chart (main) -------
     if ($('#detailedGrades')) {
-        new Chart($('#detailedGrades').getContext('2d'), { type: 'bar', data: { labels: GRADE_LABELS, datasets: [{ label: 'Grade', data: GRADE_VALUES, backgroundColor: 'rgba(47,110,242,0.85)', borderRadius: 6 }] }, options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 100 } } } });
+        new Chart($('#detailedGrades').getContext('2d'), { 
+            type: 'bar', 
+            data: { 
+                labels: GRADE_LABELS, 
+                datasets: [{ 
+                    label: 'Grade', 
+                    data: GRADE_VALUES, 
+                    backgroundColor: 'rgba(59, 130, 246, 0.8)', 
+                    borderRadius: 8,
+                    borderSkipped: false
+                }] 
+            }, 
+            options: { 
+                responsive: true, 
+                plugins: { 
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleColor: 'white',
+                        bodyColor: 'white',
+                        borderColor: 'rgba(59, 130, 246, 0.8)',
+                        borderWidth: 1
+                    }
+                }, 
+                scales: { 
+                    y: { 
+                        beginAtZero: true, 
+                        max: 100,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                } 
+            } 
+        });
+        $('#gradeList') && ($('#gradeList').innerHTML = DETAILED_GRADES.map(g => 
+            `<div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--gradient-card);border-radius:8px;margin-bottom:8px;border:1px solid var(--border)">
+                <div>
+                    <strong>${escapeHtml(g.course)}</strong><br>
+                    <span class="muted small">${escapeHtml(g.instructor)} • ${g.credits} credits</span>
+                </div>
+                <div style="text-align:right">
+                    <div style="font-size:20px;font-weight:700;color:${g.grade >= 90 ? '#10b981' : g.grade >= 80 ? '#3b82f6' : g.grade >= 70 ? '#f59e0b' : '#ef4444'}">${g.grade}%</div>
+                    <span class="muted small">${escapeHtml(g.semester)}</span>
+                </div>
+            </div>`
+        ).join(''));
+    }), { type: 'bar', data: { labels: GRADE_LABELS, datasets: [{ label: 'Grade', data: GRADE_VALUES, backgroundColor: 'rgba(47,110,242,0.85)', borderRadius: 6 }] }, options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 100 } } } });
         $('#gradeList') && ($('#gradeList').innerHTML = GRADE_LABELS.map((l, i) => `<div>${escapeHtml(l)}: <strong>${GRADE_VALUES[i]}%</strong></div>`).join(''));
     }
 
@@ -528,8 +648,64 @@
     function saveTasks() { localStorage.setItem(tasksKey, JSON.stringify(tasks)); }
     function renderTasks() { if (!tasksListEl) return; tasksListEl.innerHTML = tasks.length ? tasks.map((t, i) => `<li class="${t.done ? 'done' : ''}"><span>${escapeHtml(t.title)}</span><div><button data-toggle="${i}">✓</button> <button data-del="${i}">✖</button></div></li>`).join('') : '<div class="muted">No tasks</div>'; }
     renderTasks();
-    addTaskBtn && addTaskBtn.addEventListener('click', () => { const v = (taskInput && taskInput.value || '').trim(); if (!v) return; tasks.unshift({ title: v, done: false }); saveTasks(); renderTasks(); taskInput.value = ''; });
-    tasksListEl && tasksListEl.addEventListener('click', e => { const t = e.target; if (t.matches('[data-toggle]')) { const i = +t.dataset.toggle; tasks[i].done = !tasks[i].done; saveTasks(); renderTasks(); } if (t.matches('[data-del]')) { const i = +t.dataset.del; if (confirm('Delete task?')) { tasks.splice(i, 1); saveTasks(); renderTasks(); } } });
+    addTaskBtn && addTaskBtn.addEventListener('click', () => { const v = (taskInput && taskInput.value || '').trim(); if (!v)     // ------- Notification System -------
+    function showNotification(message, type = 'success') {
+        const toast = $('#notificationToast');
+        const messageEl = $('.toast-message');
+        const iconEl = $('.toast-icon');
+        
+        if (!toast || !messageEl) return;
+        
+        messageEl.textContent = message;
+        
+        // Update icon based on type
+        if (iconEl) {
+            if (type === 'success') {
+                iconEl.innerHTML = '<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>';
+                iconEl.style.color = 'var(--success)';
+            } else if (type === 'error') {
+                iconEl.innerHTML = '<path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>';
+                iconEl.style.color = 'var(--danger)';
+            } else if (type === 'warning') {
+                iconEl.innerHTML = '<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"/>';
+                iconEl.style.color = 'var(--warning)';
+            }
+        }
+        
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // ------- Search functionality -------
+    const searchInput = $('#searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            if (query.length < 2) return;
+            
+            // Search through announcements
+            const matchingAnnouncements = ANNOUNCEMENTS.filter(a => 
+                a.title.toLowerCase().includes(query) || 
+                a.body.toLowerCase().includes(query)
+            );
+            
+            // Search through courses
+            const matchingCourses = CATALOG.filter(c => 
+                c.code.toLowerCase().includes(query) || 
+                c.name.toLowerCase().includes(query) ||
+                c.instructor.toLowerCase().includes(query)
+            );
+            
+            // Show search results (you could create a search results modal here)
+            console.log('Search results:', { announcements: matchingAnnouncements, courses: matchingCourses });
+        });
+    }
+
+    // ------- init UI (nav, widgets, customize drawer contents) -------
+    function initWidgetsForm() {    tasksListEl && tasksListEl.addEventListener('click', e => { const t = e.target; if (t.matches('[data-toggle]')) { const i = +t.dataset.toggle; tasks[i].done = !tasks[i].done; saveTasks(); renderTasks(); } if (t.matches('[data-del]')) { const i = +t.dataset.del; if (confirm('Delete task?')) { tasks.splice(i, 1); saveTasks(); renderTasks(); } } });
 
     // ------- init UI (nav, widgets, customize drawer contents) -------
     function initWidgetsForm() {
